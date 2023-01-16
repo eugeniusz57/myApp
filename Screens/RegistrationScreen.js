@@ -15,34 +15,31 @@ export default function RegistrationScreen() {
   const [password, setPassword] = useState();
   const [isFokusKeyBoard, setIsFokusKeyBoard] = useState();
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS == "ios" ? "padding" : "height"}
-    >
-      <View style={styles.form}>
-        <Text style={styles.title}>Registration</Text>
+    <View style={styles.form}>
+      {/* <View style={styles.fotoBorder}></View> */}
+      <Text style={styles.title}>Registration</Text>
 
+      <KeyboardAvoidingView
+        behavior={Platform.OS == "ios" ? "padding" : "height"}
+      >
         <TextInput style={styles.input} placeholder="Login" />
         <TextInput
           style={styles.input}
           placeholder="Email"
           keyboardType="email-address"
         />
-        <View>
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            secureTextEntry={true}
-          />
-          {/* <TouchableOpacity style={styles.button}>
-              <Text>Show</Text>
-            </TouchableOpacity> */}
 
-          <TouchableOpacity activeOpacity={0.8} style={styles.button}>
-            <Text style={styles.textButton}>Registration</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </KeyboardAvoidingView>
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          secureTextEntry={true}
+        />
+      </KeyboardAvoidingView>
+
+      <TouchableOpacity activeOpacity={0.8} style={styles.button}>
+        <Text style={styles.textButton}>Registration</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
 
@@ -72,7 +69,6 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     paddingTop: 92,
-    paddingBottom: 66, //change later
     paddingHorizontal: 16,
   },
   button: {
@@ -88,7 +84,17 @@ const styles = StyleSheet.create({
   textButton: {
     fontWeight: "400",
     fontSize: 16,
-
     color: "#FFFFFF",
   },
+  // fotoBorder: {
+  //   top: 0,
+  //   left: 0,
+  //   borderTopLeftRadius: 16,
+  //   borderTopRightRadius: 16,
+  //   backgroundColor: "#F6F6F6",
+  //   width: 120,
+  //   height: 120,
+  //   borderColor: "red",
+  //   borderWidth: 5,
+  // },
 });
